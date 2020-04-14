@@ -49,7 +49,7 @@ function setup() {
 	strokeColorPicker.position(450, height + 30);
 	strokeColorPicker.input( () => renderUpdate = true );
 	fillColorPicker = createColorPicker(color('#9af')); // fill picker
-	fillColorPicker.position(100, height + 40);
+	fillColorPicker.position(115, height + 40);
 	fillColorPicker.input( () => {if(showFillShapes) renderUpdate = true;} );
 	
 	saveButton = createButton('Save Image');
