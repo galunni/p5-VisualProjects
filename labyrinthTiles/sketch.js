@@ -49,12 +49,12 @@ function setup() {
 	strokeColorPicker.position(450, height + 30);
 	strokeColorPicker.input( () => renderUpdate = true );
 	fillColorPicker = createColorPicker(color('#9af')); // fill picker
-	fillColorPicker.position(115, height + 40);
+	fillColorPicker.position(115, height + 45);
 	fillColorPicker.input( () => {if(showFillShapes) renderUpdate = true;} );
 	
 	saveButton = createButton('Save Image');
 	saveButton.position(600, height + 50);
-	saveButton.mousePressed( () => { save(); });
+	saveButton.mousePressed( () => { save("labyrinthTiles"); });
 	
 	frameRate(5);
 }
