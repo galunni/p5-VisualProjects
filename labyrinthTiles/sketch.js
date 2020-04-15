@@ -20,12 +20,12 @@ let sketch = function( p5 ) {
   p5.checkEventBoundaries = function(){
     showTilesBoundaries = !showTilesBoundaries;
     renderUpdate = true;
-  }
+  };
   
   p5.checkEventFilled = function(){
     showFillShapes = !showFillShapes;
     renderUpdate = true;
-  }
+  };
   
   
   p5.setup = function() {
@@ -44,25 +44,25 @@ let sketch = function( p5 ) {
     txtWeight = p5.createDiv("strokeWeight: " + weight );
     txtWeight.position(420, p5.height + 90);
     
-    checkBoxBoundaries = p5.createCheckbox('show tiles boundaries', false);
+    checkBoxBoundaries = p5.createCheckbox( "show tiles boundaries ", false);
     checkBoxBoundaries.changed(p5.checkEventBoundaries);
     
-    checkBoxFilled = p5.createCheckbox('fill shapes', false);
+    checkBoxFilled = p5.createCheckbox( "fill shapes ", false);
     checkBoxFilled.changed(p5.checkEventFilled);
     
-    bgColorPicker = p5.createColorPicker('#0554F2'); // background picker
+    bgColorPicker = p5.createColorPicker( "#0554F2 "); // background picker
     bgColorPicker.position(245, p5.height + 30);
     bgColorPicker.input( () => renderUpdate = true );
-    strokeColorPicker = p5.createColorPicker(p5.color('#4CB1F7'));//strk picker
+    strokeColorPicker = p5.createColorPicker(p5.color( "#4CB1F7 "));//strk picker
     strokeColorPicker.position(450, p5.height + 30);
     strokeColorPicker.input( () => renderUpdate = true );
-    fillColorPicker = p5.createColorPicker(p5.color('#9af')); // fill picker
+    fillColorPicker = p5.createColorPicker(p5.color( "#9af ")); // fill picker
     fillColorPicker.position(115, p5.height + 45);
     fillColorPicker.input( () => { if(showFillShapes) renderUpdate = true; } );
     
-    saveButton = p5.createButton('Save Image');
+    saveButton = p5.createButton( "Save Image ");
     saveButton.position(600, p5.height + 50);
-    saveButton.mousePressed( () => { save("labyrinthTiles"); });
+    saveButton.mousePressed( () => { p5.save("labyrinthTiles"); });
     
     p5.frameRate(5);
   };
@@ -90,7 +90,7 @@ let sketch = function( p5 ) {
           if (p5.random() < r) {  // UP LEFT oriented lines and arcs
             p5.line(x, y, x + spc, y + spc);
             p5.arc(x + spc/2, y + spc/2, spc, spc, 
-                   p5.PI+ p5.HALF_PI, p5.TWO_PI);
+                            p5.PI+ p5.HALF_PI, p5.TWO_PI);
             p5.arc(x + spc/2, y + spc/2, spc, spc, p5.HALF_PI, p5.PI);
           } else {    // UP RIGHT oriented lines and arcs
             p5.line(x + spc, y, x, y + spc);
