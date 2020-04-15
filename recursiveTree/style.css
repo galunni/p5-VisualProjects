@@ -1,0 +1,21 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+
+b {
+  color: white;
+  margin: 1px;
+  border: 32px;
+  padding: 5px;
+}
+b.on{
+  background-color: green;
+}
+
+b.off{
+  background-color: red;
+}
